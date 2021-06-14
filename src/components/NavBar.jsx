@@ -1,6 +1,7 @@
+import { CartWidget } from "./CartWidget.jsx"
 export const NavBar = () => {
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav">
@@ -15,6 +16,7 @@ export const NavBar = () => {
             </ul>
           </div>
         </div>
+        <CartWidget />
       </nav>
     );
 }
