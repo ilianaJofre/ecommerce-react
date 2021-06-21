@@ -1,22 +1,34 @@
 import { useState } from "react";
-export const ItemCount = (stock) => {
-    const [cantidad, setCantidad] = useState (1);
+export const ItemCount = ({stock}, {initial = 1}) => {
+    const [cantidad, setCantidad] = useState (initial);
     const [cart, setCart ] = useState([]);
-
     console.log(cart);
-    
+
     const suma = () => {
             if (cantidad<stock){
                 setCantidad(cantidad+1)
             }
     }
-    return (
-        <div>
-                <button onClick = { () => { setCantidad(cantidad - 1) }}>-</button>
-                <input type="number" value={cantidad} readOnly/>
-                <button onClick = {suma}>+</button>
-                <button className='btn btn-primary' onClick={() => { setCart([...cart, {id:1, name:'Test', cantidad: cantidad}]) }}>Agregar al carrito</button>
-        </div>
-    )
-
+    const resta = () => {
+        if (cantidad>1){
+            setCantidad(cantidad-1)
+        }
+    }
+    const onAdd = () => {
+        setCart([...cart, {id:1, name:'Test', cantidad: cantidad}])
+    }
+    if (stock == 0){
+        return (
+            <p>Sin stock disponible!</p>
+        )
+    } else {
+        return (
+            <div>
+                    <button onClick = {resta}>-</button>
+                    <input type="value" value={cantidad} readOnly/>
+                    <button onClick = {suma}>+</button>
+                    <button className='btn btn-primary' onClick={onAdd}>Agregar al carrito</button>
+            </div>
+        )
+    }
 }

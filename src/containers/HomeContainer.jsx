@@ -5,7 +5,7 @@ export const HomeContainer = () => {
     const product = {
         title: 'Product test',
         description: 'Soy un producto de prueba',
-        stock: 4,
+        stock: 6,
         }
     return (
         <>
