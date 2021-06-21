@@ -1,4 +1,4 @@
-import { CartWidget } from "./CartWidget.jsx"
+import { CartWidget } from "./CartWidget.jsx";
 export const NavBar = () => {
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
