@@ -2,7 +2,6 @@ import { useState } from "react";
 export const ItemCount = ({stock}, {initial = 1}) => {
     const [cantidad, setCantidad] = useState (initial);
     const [cart, setCart ] = useState([]);
-    console.log(cart);
 
     const suma = () => {
             if (cantidad<stock){

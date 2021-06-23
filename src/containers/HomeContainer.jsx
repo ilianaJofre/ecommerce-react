@@ -1,17 +1,12 @@
 import {NavBar} from '../components/NavBar.jsx';
-import {ItemListContainers} from '../components/ItemListContainers.jsx';
+import { ItemListContainers } from '../components/ComponentItemList/ItemListContainers.jsx';
 
-export const HomeContainer = () => {
-    const product = {
-        title: 'Product test',
-        description: 'Soy un producto de prueba',
-        stock: 6,
-        }
+export const HomeContainer = ({setProducts}) => {
     return (
         <>
             <NavBar />
             <section>
-                <ItemListContainers productData={product}/>
+                <ItemListContainers productData={setProducts}/>
             </section>
         </>
     )
