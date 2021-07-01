@@ -5,14 +5,13 @@ import { useEffect, useState } from 'react';
 import { getData } from './utils/getData';
 
 function App() {
-
+  
   const [products, setProducts] = useState ([]);
 
   useEffect( async () => {
 
     const processDB = async () => {
-      let data =  await getData();
-      console.log(data)
+      let data =  await getData(1);
       let aux = data.map(e => {
         return {
           title: e.title,
@@ -28,9 +27,9 @@ function App() {
     
 
   return (
-    <div className='App'>
-      <HomeContainer setProducts={products}/>
-    </div>
+      <div className='App'>
+        <HomeContainer setProducts={products}/>
+      </div>
   );
 }
 
