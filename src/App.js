@@ -11,7 +11,7 @@ function App() {
   useEffect( async () => {
 
     const processDB = async () => {
-      let data =  await getData(1);
+      let data =  await getData(10);
       let aux = data.map(e => {
         return {
           title: e.title,

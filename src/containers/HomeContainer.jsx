@@ -6,7 +6,7 @@ export const HomeContainer = ({setProducts}) => {
     return (
         <>
             <NavBar />
-            <ItemDetailContainer productData={setProducts}/>
+            <ItemDetailContainer/>
             <section>
                 <ItemListContainers productData={setProducts}/>
             </section>
