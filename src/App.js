@@ -1,35 +1,22 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {HomeContainer} from './containers/HomeContainer.jsx';
-import { useEffect, useState } from 'react';
-import { getData } from './utils/getData';
+import { BrowserRouter, Route, Switch} from 'react-router-dom';
+import { NavBar } from './components/NavBar';
+import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailCointainer';
+import { HomeContainer } from './containers/HomeContainer';
 
 function App() {
-  
-  const [products, setProducts] = useState ([]);
-
-  useEffect( async () => {
-
-    const processDB = async () => {
-      let data =  await getData(10);
-      let aux = data.map(e => {
-        return {
-          title: e.title,
-          price: e.price,
-          img: e.thumbnail,
-          stock: e.available_quantity,
-        }
-      });
-       setProducts(aux);
-      }
-      processDB();
-    }, []);
-    
-
   return (
-      <div className='App'>
-        <HomeContainer setProducts={products}/>
-      </div>
+    <BrowserRouter>
+      <NavBar />
+      <Switch>
+        <section>
+          <Route exact path='/' component={HomeContainer}/>
+          <Route exact path='/category/:id' component={HomeContainer} />
+          <Route exact path='/item/:id' component={ItemDetailContainer} />
+        </section>
+      </Switch>
+    </BrowserRouter>
   );
 }
 

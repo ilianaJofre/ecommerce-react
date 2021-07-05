@@ -8,7 +8,32 @@
 }
 
 .cart {
-  margin-right: 15vh;
+  margin-right: 5vh;
+}
+
+.style {
+  margin-top: 2%;
+  margin-right: 0.5%;
+  padding: 0%;
+  border: 0;
+  width: 100%;
+  background-color: #FFFFFF
+}
+
+.contador {
+  width: 30%;
+  border: 0;
+  background-color: white;
+}
+
+.groupButoms {
+  width: 70%;
+  justify-content: center;
+  margin: auto;
+}
+
+.container-md{
+  justify-content: flex-start;
 }
 
 @media (prefers-reduced-motion: no-preference) {
