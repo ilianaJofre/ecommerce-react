@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 export const ItemCount = ({stock, id}, {initial = 1}) => {
-    
     const [cantidad, setCantidad] = useState (initial);
     const [cart, setCart ] = useState([]);
 

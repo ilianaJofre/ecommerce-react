@@ -11,7 +11,7 @@ export const Item = ({id, title, price, img, stock}) => {
                 <div className="card-body">
                     <h5 className='card-title'>{title}</h5>
                     <p className='card-text'>$ {price}</p>
-                    <ItemCount stock={stock} id={id} />
+                    <ItemCount stock={stock} id={id}/>
                 </div>
             </div>
         </div>

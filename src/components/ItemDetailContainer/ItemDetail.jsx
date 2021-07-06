@@ -6,7 +6,7 @@ const divStyle = {
 export const ItemDetail = ({product}) => {
     return (
         <div className="card" style={divStyle}>
-            <img src={product.thumbnail} className="card-img-top" alt="Imágen del producto"/>
+            <img src={product.thumbnail} className='img rounded mx-auto d-block' alt="Imágen del producto"/>
             <div className="card-body">
                 <p className="card-title">{product.title}</p>
                 <p className="card-text">$ {product.price}</p>
