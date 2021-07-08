@@ -1,11 +1,8 @@
+import { Col, Card } from "react-bootstrap";
 import { ItemCount } from "../ItemCount";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const divStyle = {
-    width: '18rem',
-    margin: '50px auto',
-};
 export const Item = ({id, title, price, img, stock}, {initial =1}) => {
 
     const [cantidad, setCantidad] = useState (initial);
@@ -25,8 +22,8 @@ export const Item = ({id, title, price, img, stock}, {initial =1}) => {
             setCart([...cart, {id:1, name:'Test', cantidad: cantidad}])
     }
     return (
-        <div className="col pl-0">
-            <div className="card pl-0" style={divStyle}>
+        <Col>
+            <Card className='mt-5' style={{ width: '18rem' }}>
                 <div className='w-60 m-3'>
                     <img src= {img} className='img' alt='Produc image'/>
                 </div>
@@ -41,7 +38,7 @@ export const Item = ({id, title, price, img, stock}, {initial =1}) => {
                     }
                     <button className='style'><Link className='btn btn-primary' to={`/item/${id}`}>Ver Detalle</Link></button>
                 </div>
-            </div>
-        </div>
+            </Card>
+        </Col>
     )
 }
