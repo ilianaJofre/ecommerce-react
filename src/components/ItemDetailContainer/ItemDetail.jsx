@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ItemCount } from '../ItemCount.jsx';
 import { useState } from "react";
+import { Card, Button } from "react-bootstrap";
 
 const divStyle = {
     width: '20rem',
@@ -26,19 +27,19 @@ export const ItemDetail = ({product}, {initial = 1}) => {
     }
 
     return (
-        <div className="card" style={divStyle}>
-            <img src={product.thumbnail} className='img rounded mx-auto d-block' alt="Imágen del producto"/>
-            <div className="card-body">
-                <p className="card-title">{product.title}</p>
-                <p className="card-text">$ {product.price}</p>
-            </div>
-            <ItemCount resta={resta} suma={suma} onAdd={onAdd} cantidad={cantidad}/>
-            { (cart.length >= 1) ?
-                        <button className='style'><Link className='btn btn-primary' to={'/cart'}>Terminar compra</Link></button>
-                        :
-                        ''
-            }
-            <Link  className='btn btn-primary'to={'/'}>Volver</Link>
-        </div>
+        <Card className='border border-info' style={{ width: '18rem', margin:'5% auto'}} >
+            <Card.Img variant="top" src={product.thumbnail} style={{width: '50%', margin: 'auto'}}/>
+            <Card.Body>
+                <Card.Title style={{fontSize: 15, height: '7vh'}}>{product.title}</Card.Title>
+                <Card.Text style={{fontSize: 18}}>$ {product.price}</Card.Text>
+                <ItemCount resta={resta} suma={suma} onAdd={onAdd} cantidad={cantidad}/>
+                { (cart.length >= 1) ?
+                    <Button style={{width: '100%', margin: '2% auto'}} variant="outline-success"><Link to={'/cart'}>Terminar compra</Link></Button>
+                    :
+                    ''
+                }
+                <Link  style={{width: '100%'}} className='btn btn-primary'to={'/'}>Volver</Link>
+            </Card.Body>
+        </Card>
     )
 }
