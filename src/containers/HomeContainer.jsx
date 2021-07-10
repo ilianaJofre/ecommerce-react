@@ -3,11 +3,11 @@ import { useEffect, useState } from 'react';
 import { ItemListContainers } from '../components/ComponentItemList/ItemListContainers.jsx';
 import { useParams } from 'react-router-dom';
 
-export const HomeContainer = ({}) => {
+export const HomeContainer = () => {
     const params=useParams();
     const [products, setProducts] = useState ([]);
 
-    useEffect( async () => {
+    useEffect( () => {
       const processDB = async () => {
         let data =  await getData(params.id);
         let aux = data.map(e => {

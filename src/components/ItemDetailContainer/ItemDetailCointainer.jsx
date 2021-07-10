@@ -8,14 +8,14 @@ export const ItemDetailContainer = () => {
     let id = productParams.id;
     const [product, setProduct] = useState ([]);
     
-    useEffect( async () => {      
+    useEffect( () => {      
       const processDB = async () => {
         let data =  await getProduct(id);
         setProduct(data);
       }
       processDB();
-    }, [productParams]);
-
+    }, [id]);
+    console.log(productParams)
     return (
         <ItemDetail product = {product}/>
     )

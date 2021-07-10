@@ -4,9 +4,9 @@ export const ItemList = ({productData}) => {
     return (
         <Container >
             <Row>
-                {productData.map(e => {
+                {productData.map((e, index) => {
                     return (
-                        <Item id={e.id} title={e.title} stock={e.stock} price={e.price} img={e.img}/>
+                        <Item key={index} id={e.id} title={e.title} stock={e.stock} price={e.price} img={e.img}/>
                     )
                 })}
             </Row>
